@@ -4,30 +4,34 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1FEA7C3B-2202-47CA-ABF6-CC9FEC0D4909}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>AgenciaEntidades</RootNamespace>
-    <AssemblyName>AgenciaEntidades</AssemblyName>
+    <ProjectGuid>{0B080182-8F8F-4C4A-BB9B-BABA45D9C20E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <StartupObject>AgenciaTest.PaqueteTest</StartupObject>
+    <RootNamespace>AgenciaTest</RootNamespace>
+    <AssemblyName>AgenciaTest</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>Windows</MyType>
+    <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>AgenciaEntidades.xml</DocumentationFile>
+    <DocumentationFile>AgenciaTest.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>AgenciaEntidades.xml</DocumentationFile>
+    <DocumentationFile>AgenciaTest.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -45,6 +49,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,15 +68,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agencia.vb" />
-    <Compile Include="Ciudad.vb" />
-    <Compile Include="Cliente.vb" />
-    <Compile Include="Hotel.vb" />
-    <Compile Include="Paquete.vb" />
-    <Compile Include="Pasaje.vb" />
-    <Compile Include="Pasajero.vb" />
-    <Compile Include="Producto.vb" />
-    <Compile Include="Venta.vb" />
+    <Compile Include="ClienteTest.vb" />
+    <Compile Include="HotelTest.vb" />
+    <Compile Include="PaqueteTest.vb" />
+    <Compile Include="PasajeroTest.vb" />
+    <Compile Include="PasajeTest.vb" />
+    <Compile Include="VentaTest.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -106,6 +108,13 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgenciaEntidades\AgenciaEntidades.vbproj">
+      <Project>{1fea7c3b-2202-47ca-abf6-cc9fec0d4909}</Project>
+      <Name>AgenciaEntidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
